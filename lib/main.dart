@@ -46,17 +46,64 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('Gmail'),
+            Container(
+              height: 100,
+              child: DrawerHeader(
+                child: Text('Gmail', style: TextStyle(color: Colors.red, fontSize:30),),
+              ),
             ),
             ListTile(
-              title: Text('Archives'),
+              leading: Icon(Icons.inbox),
+              title: Text('Primary',style: TextStyle(fontSize: 18),),
             ),
             ListTile(
-              title: Text('Spam'),
+              leading: Icon(Icons.group),
+              title: Text('Social',style: TextStyle(fontSize: 18),),
             ),
             ListTile(
-              title: Text('important'),
+              leading: Icon(Icons.local_offer),
+              title: Text('Promotions',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.info_outline),
+              title: Text('Updates',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.forum),
+              title: Text('Forums',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Container(
+                child: Text('ALL LABELS',style: TextStyle(fontSize: 15),),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.star_border),
+              title: Text('Starred',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.access_time),
+              title: Text('Snoozed',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.label_important),
+              title: Text('Important',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.send),
+              title: Text('Sent',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.schedule),
+              title: Text('Scheduled',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.folder_open),
+              title: Text('Outbox',style: TextStyle(fontSize: 18),),
+            ),
+            ListTile(
+              leading: Icon(Icons.insert_drive_file),
+              title: Text('Drafts',style: TextStyle(fontSize: 18),),
             ),
           ],
         ),
