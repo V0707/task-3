@@ -37,13 +37,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            SizedBox(
-              height: 80,
+            Container(
+              height: 90,
               child: DrawerHeader(
                 child: Text('Gmail', style: TextStyle(color: Colors.red, fontSize:25),),
               ),
             ),
-            Divider(thickness: 1.0,),
+            //Divider(thickness: 1.0,),
             Container(
               decoration: BoxDecoration(
                 color: Colors.red.shade100,
