@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,12 +10,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      title: 'Gmail clone',
+      home: MyHomePage(title: 'Gmail clone'),
     );
   }
 }
@@ -28,33 +25,37 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        backgroundColor: Colors.red,
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            Container(
-              height: 100,
+            SizedBox(
+              height: 80,
               child: DrawerHeader(
-                child: Text('Gmail', style: TextStyle(color: Colors.red, fontSize:30),),
+                child: Text('Gmail', style: TextStyle(color: Colors.red, fontSize:25),),
               ),
             ),
-            ListTile(
-              leading: Icon(Icons.inbox),
-              title: Text('Primary',style: TextStyle(fontSize: 18),),
+            Divider(thickness: 1.0,),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.red.shade100,
+                borderRadius: BorderRadius.only(
+                  bottomRight: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                ),),
+              child: ListTile(
+                leading: Icon(Icons.inbox, color: Colors.red,),
+                title: Text('Primary',style: TextStyle(fontSize: 18,color: Colors.red),),
+                trailing: Text('99+', style: TextStyle(color: Colors.red),),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.group),
@@ -63,10 +64,26 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.local_offer),
               title: Text('Promotions',style: TextStyle(fontSize: 18),),
+              trailing: Container(
+                padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+                decoration: BoxDecoration(
+                  color: Colors.green.shade900,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Text('3 new', style: TextStyle(color: Colors.white),),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.info_outline),
               title: Text('Updates',style: TextStyle(fontSize: 18),),
+              trailing: Container(
+                padding: EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+                decoration: BoxDecoration(
+                  color: Colors.yellow.shade900,
+                  borderRadius: BorderRadius.circular(20.0),
+                ),
+                child: Text('1 new', style: TextStyle(color: Colors.white),),
+              ),
             ),
             ListTile(
               leading: Icon(Icons.forum),
@@ -80,6 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.star_border),
               title: Text('Starred',style: TextStyle(fontSize: 18),),
+
             ),
             ListTile(
               leading: Icon(Icons.access_time),
@@ -88,6 +106,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.label_important),
               title: Text('Important',style: TextStyle(fontSize: 18),),
+              trailing: Text('99+'),
             ),
             ListTile(
               leading: Icon(Icons.send),
@@ -104,29 +123,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               leading: Icon(Icons.insert_drive_file),
               title: Text('Drafts',style: TextStyle(fontSize: 18),),
+              trailing: Text('32'),
             ),
           ],
         ),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      ),       // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
